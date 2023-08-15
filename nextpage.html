@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd form</title>
+    <link rel="stylesheet" href="nextpage.css">
+
+</head>
+<body>
+    <div class="HEADING">
+        <h1 id="head">Survey form</h1>
+        <h2 id="subheading">Thank you for helping us to improve our platform</h2>
+    </div>
+    <form onsubmit="myfunc(event)">
+        <div id="content">
+        <label for="name">College Name</label><br><br>
+        <input type="text" id="college_name" name="name" class="box"><br><br>
+   
+        <label for="Course">Course</label><br><br>
+        <input type="text" id="Course" name="Course" class="box" required><br><br>
+    
+        <label for="address">College Location</label><br><br>
+        <input type="text" id="college_address" name="address" class="box" required><br><br>
+  
+        <label for="email">College Email Address:</label><br><br>
+        <input type="email" id="clg_email" name="email" class="box" required><br><br>
+    
+    <label>In which year you are Studying</label><br><br>
+  
+    <div class="option" >
+        <select id="year">
+            <option name="Select year"></option>
+            <option value="Year">First Year</option>
+            <option value="Year">Second Year</option>
+            <option value="Year">Third Year</option>
+            <option value="Year">Fourth Year</option>
+        </select>
+    </div><br>
+    <input type="submit" value="submit" onclick="myfunc()">
+    </form>
+   
+    <script type="text/javascript">
+        function myfunc(event){
+            event.preventDefault();
+             var college_name = document.getElementById("college_name").value;
+             var Course = document.getElementById("Course").value;
+             var college_address= document.getElementById("college_address").value;
+             var clg_email = document.getElementById("clg_email").value;
+             var year = document.getElementById("year").value;
+
+             var a= localStorage.setItem('college_name' , college_name);
+             var b= localStorage.setItem('Course' , Course);
+             var c= localStorage.setItem('college_address' , college_address);
+             var d= localStorage.setItem('clg_email' , clg_email);
+             var e= localStorage.setItem('year' , year);
+        }
+
+    </script>
+</body>
+</html>

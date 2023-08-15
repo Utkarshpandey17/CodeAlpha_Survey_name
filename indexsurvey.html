@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURVEY FORM</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="HEADING">
+        <H1 id="head">Survey form</H1>
+        <h2 id="subheading">Thank you for helping us to improve our platform</h2>
+    </div>
+        
+    <form onsubmit="myfunc(event)">
+    <div id="content">
+        <label for="name">Name:</label><br><br>
+        <input type="text" id="name" name="name" class="box"><br><br>
+   
+        <label for="phone">Phone Number:</label><br><br>
+        <input type="tel" id="phone" name="phone" class="box" required><br><br>
+    
+        <label for="address">Location</label><br><br>
+        <input type="text" id="address" name="address" class="box" required><br><br>
+  
+        <label for="email">Email Address:</label><br><br>
+        <input type="email" id="email" name="email" class="box" required><br><br>
+    
+    <label>Which option best describes your role?</label><br><br>
+    <div class="option">
+        <select >
+            <option name="Select your role"></option>
+            <option value="Student">Student</option>
+            <option value="Fresher">Fresher</option>
+            <option value="Part time job">Part-time job</option>
+            <option value="Full-time job">Full-time job</option>
+        </select>
+    </div><br>
+    <label for="department">Field of internship</label><br><br>
+    <div class="option1">
+        <select>
+            <option value="Select your Field"></option>
+            <option value="Web Development">Web Development</option>
+            <option value="Java">java internship</option>
+            <option value="python">Python</option>
+            <option value="C language">C language</option>
+            <option value="C++">C++</option>     
+         </select>
+    </div>
+    <label id="txtarea">Any Suggestion or comments?</label><br><br>
+    <textarea placeholder="Enter your comments or suggestions"  cols="43" rows="10"></textarea>
+    <br><br>
+    <a href="http://127.0.0.1:5500/nextpage.html"> <button><h3>Next</h3></button>
+      
+    </div>
+        
+</form>
+<script type="text/javascript">
+    function myfunc(event){
+        event.preventDefault();
+         var name = document.getElementById("name").value;
+         var phone = document.getElementById("phone").value;
+         var address= document.getElementById("address").value;
+         var email = document.getElementById("email").value;
+
+
+         var a= localStorage.setItem('name' ,name);
+         var b= localStorage.setItem('phone', phone);
+         var c= localStorage.setItem('address' , address);
+         var d= localStorage.setItem('email' ,email);
+         
+    }
+
+</script>
+</body>
+</html>
